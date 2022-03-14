@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -46,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_listView:
+                Intent intent = new Intent(this, ListViewClass.class);
+                startActivity(intent);
                 Toast.makeText(getApplicationContext(), ":Lab 4", Toast.LENGTH_SHORT).show();
             case R.id.nav_tabHost:
                 Toast.makeText(getApplicationContext(), ":Lab 5", Toast.LENGTH_SHORT).show();
