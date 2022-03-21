@@ -45,16 +45,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Intent intent = new Intent();
         switch (item.getItemId()) {
             case R.id.nav_listView:
-                Intent intent = new Intent(this, ListViewClass.class);
-                startActivity(intent);
+                intent = new Intent(this, ListViewClass.class);
                 Toast.makeText(getApplicationContext(), ":Lab 4", Toast.LENGTH_SHORT).show();
+                break;
             case R.id.nav_tabHost:
+                intent = new Intent(this, TabHostActivity.class);
                 Toast.makeText(getApplicationContext(), ":Lab 5", Toast.LENGTH_SHORT).show();
+                break;
             case R.id.nav_radioButton:
                 Toast.makeText(getApplicationContext(), ":Lab 6", Toast.LENGTH_SHORT).show();
+                break;
+
         }
+        startActivity(intent);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

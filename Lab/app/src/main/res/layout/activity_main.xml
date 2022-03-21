@@ -33,9 +33,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="asdf"
-            android:textSize="20sp"
-            android:layout_below="@id/toolbar"/>
+            android:layout_below="@+id/toolbar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="165dp"
+            android:text="Please Select The Project in The Menu"
+            android:textAlignment="center"
+            android:textSize="20sp" />
 
     </RelativeLayout>
 

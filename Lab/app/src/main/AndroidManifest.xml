@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lab_Project">
         <activity
+            android:name=".TabHostActivity"
+            android:exported="false" />
+        <activity
             android:name=".ListViewClass"
             android:exported="false" />
         <activity

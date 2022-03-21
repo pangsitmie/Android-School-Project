@@ -41,11 +41,11 @@ public class ListViewClass extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Users listItem = lv.getItemAtPosition(position);
+                Users listItem = (Users) lv.getItemAtPosition(position);
                 AlertDialog.Builder builder = new AlertDialog.Builder(ListViewClass.this);
                 builder.setTitle("Result");
                 builder.setIcon(R.drawable.ic_privacy);
-                builder.setMessage(""+);
+                builder.setMessage("");
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
