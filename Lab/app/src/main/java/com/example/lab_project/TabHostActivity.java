@@ -3,17 +3,21 @@ package com.example.lab_project;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TabHost;
+import android.widget.TextView;
+import android.widget.TimePicker;
 
 import java.util.Calendar;
 
 public class TabHostActivity extends AppCompatActivity {
 
+    TextView tvDate, tvTime;
     Button dateBtn, timeBtn;
 
     @Override
@@ -21,18 +25,14 @@ public class TabHostActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tab_host);
 
+        tvDate = findViewById(R.id.tvDate);
+        tvTime = findViewById(R.id.tvTime);
         dateBtn = findViewById(R.id.dateBtn);
         timeBtn = findViewById(R.id.timeBtn);
 
 //        CALENDER
         final Calendar mCalendar = Calendar.getInstance();
-        final DatePickerDialog.OnDateSetListener dateSetListener;
-        dateSetListener =  new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                Log.d("tag", year+"-"+String.valueOf(month+1)+"-"+dayOfMonth);
-            }
-        };
+
 
 
 
@@ -62,12 +62,49 @@ public class TabHostActivity extends AppCompatActivity {
         tabHost.addTab(TS);
 
 //      BUTTONS
+//        Date
+        final DatePickerDialog.OnDateSetListener dateSetListener;
+        dateSetListener =  new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                String setDate = year+"-"+String.valueOf(month+1)+"-"+dayOfMonth;
+                Log.d("tag", setDate);
+                tvDate.setText(setDate);
+            }
+        };
         dateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+                DatePickerDialog dialog = new DatePickerDialog(TabHostActivity.this,dateSetListener,
+                        mCalendar.get(Calendar.YEAR),
+                        mCalendar.get(Calendar.MONTH),
+                        mCalendar.get(Calendar.DAY_OF_MONTH));
+                dialog.show();
             }
         });
+
+//        Time
+        final TimePickerDialog.OnTimeSetListener onTimeSetListener;
+        onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                String setTime = hourOfDay + ":" + minute;
+                Log.d("tag", setTime);
+                tvTime.setText(setTime);
+            }
+        };
+
+        timeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TimePickerDialog dialog = new TimePickerDialog(TabHostActivity.this, onTimeSetListener,
+                        mCalendar.get(Calendar.HOUR),
+                        mCalendar.get(Calendar.MINUTE),
+                        false);
+                dialog.show();
+            }
+        });
+
 
 
 
