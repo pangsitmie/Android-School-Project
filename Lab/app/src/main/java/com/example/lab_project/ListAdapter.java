@@ -74,8 +74,6 @@ public class ListAdapter extends ArrayAdapter<Users> {
             result = convertView;
         }
 
-
-
         lastPosition = position;
 
         holder.title.setText(user.getTitle());

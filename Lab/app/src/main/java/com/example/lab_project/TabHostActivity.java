@@ -9,16 +9,22 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class TabHostActivity extends AppCompatActivity {
 
     TextView tvDate, tvTime;
     Button dateBtn, timeBtn;
+
+    //listview
+    ListView lv;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +35,20 @@ public class TabHostActivity extends AppCompatActivity {
         tvTime = findViewById(R.id.tvTime);
         dateBtn = findViewById(R.id.dateBtn);
         timeBtn = findViewById(R.id.timeBtn);
+
+        lv = (ListView) findViewById(R.id.lv);
+
+        ArrayList<Users> userList = new ArrayList<>();
+        for (int i=0;i<500;i++)
+        {
+            Users user = new Users("User "+i, "desc "+i);
+            userList.add(user);
+        }
+        Log.d("TAG", "onCreate: "+ userList.get(8).getTitle());
+
+        ListAdapter adapter = new ListAdapter(this, R.layout.listview_layout, userList);
+        lv.setAdapter(adapter);
+
 
 //        CALENDER
         final Calendar mCalendar = Calendar.getInstance();

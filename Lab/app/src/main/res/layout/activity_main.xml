@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:id="@+id/drawer_layout"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    android:background="@color/primary_blue">
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
@@ -19,7 +20,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/primary_blue">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -31,14 +33,40 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
         <TextView
+            android:id="@+id/tv1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/toolbar"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="165dp"
-            android:text="Please Select The Project in The Menu"
+            android:text="Hello!"
             android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="40sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text=" \n Welcome to Jeriel's Project \nPlease Select The Project in The Menu"
+            android:textAlignment="center"
+            android:textColor="@color/white"
             android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="National Yuntech University of Science of Technology\nB10817055"
+            android:textAlignment="center"
+            android:textColor="@color/gray"
+            android:textSize="14sp"
+            android:layout_marginBottom="12dp"/>
 
     </RelativeLayout>
 

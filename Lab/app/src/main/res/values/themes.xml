@@ -20,7 +20,10 @@
     <style name="Theme.Lab_Project.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
 
+    <style name="TabWidgetTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColorPrimary">@color/primary_blue</item>
     </style>
 
 

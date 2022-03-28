@@ -8,13 +8,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class ListViewClass extends AppCompatActivity {
+public class ListViewActivity extends AppCompatActivity {
     ListView lv;
 
     @Override
@@ -42,7 +40,7 @@ public class ListViewClass extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Users listItem = (Users) lv.getItemAtPosition(position);
-                AlertDialog.Builder builder = new AlertDialog.Builder(ListViewClass.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(ListViewActivity.this);
                 builder.setTitle("Result");
                 builder.setIcon(R.drawable.ic_privacy);
                 builder.setMessage("");

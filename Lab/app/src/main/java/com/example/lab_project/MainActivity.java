@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent intent = new Intent();
         switch (item.getItemId()) {
             case R.id.nav_listView:
-                intent = new Intent(this, ListViewClass.class);
+                intent = new Intent(this, ListViewActivity.class);
                 Toast.makeText(getApplicationContext(), ":Lab 4", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_tabHost:
@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Toast.makeText(getApplicationContext(), ":Lab 5", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_radioButton:
+                intent = new Intent(this, RadioButtonActivity.class);
                 Toast.makeText(getApplicationContext(), ":Lab 6", Toast.LENGTH_SHORT).show();
                 break;
 

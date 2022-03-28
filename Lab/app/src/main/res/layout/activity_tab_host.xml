@@ -9,7 +9,8 @@
     <TabHost
         android:id="@+id/tabhost"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:theme="@style/TabWidgetTheme">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -20,7 +21,8 @@
             <TabWidget
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/primary_blue"/>
 
             <!--FrameLayout which contains the data of the activity-->
             <FrameLayout
@@ -33,7 +35,7 @@
                     android:id="@+id/tab1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#FFC0CB">
+                    android:background="@color/primary_blue">
 
                     <!--Text View for applying the text to the tab-->
                     <TextView
@@ -44,18 +46,22 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="270dp"
                         android:text="Date"
-                        android:textColor="#000"
+                        android:textColor="@color/white"
                         android:textSize="24sp" />
+
                     <Button
                         android:id="@+id/dateBtn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Select a Date"
-                        android:backgroundTint="@color/white"
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
-                        android:layout_margin="40dp"
-                        />
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginEnd="40dp"
+                        android:layout_marginBottom="40dp"
+                        android:background="@drawable/round_button"
+                        android:backgroundTint="@color/white"
+                        android:text="Select a Date" />
                 </RelativeLayout>
 
                 <!--for tab 2-->
@@ -63,7 +69,7 @@
                     android:id="@+id/tab2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#90ee90"
+                    android:background="@color/primary_blue"
                     android:orientation="vertical">
 
                     <!--Text View for applying the text to the tab-->
@@ -75,7 +81,7 @@
                         android:layout_marginTop="270dp"
                         android:layout_centerInParent="true"
                         android:text="Time"
-                        android:textColor="#000"
+                        android:textColor="@color/white"
                         android:textSize="24sp" />
                     <Button
                         android:id="@+id/timeBtn"
@@ -86,6 +92,7 @@
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
                         android:layout_margin="40dp"
+                        android:background="@drawable/round_button"
                         />
                 </RelativeLayout>
 
@@ -94,19 +101,14 @@
                     android:id="@+id/tab3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#add8e6"
+                    android:background="@color/primary_blue"
                     android:orientation="vertical">
 
                     <!--Text View for applying the text to the tab-->
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="270dp"
-                        android:text="Listview"
-                        android:layout_centerInParent="true"
-                        android:textColor="#000"
-                        android:textSize="32sp" />
+                    <ListView
+                        android:id="@+id/lv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
                 </RelativeLayout>
 
                 <!--for tab 4-->
@@ -114,7 +116,7 @@
                     android:id="@+id/tab4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#0A3543"
+                    android:background="@color/primary_blue"
                     android:orientation="vertical">
                     <ImageView
                         android:id="@+id/picture"
