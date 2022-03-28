@@ -14,6 +14,12 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.common.util.ArrayUtils;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     private int rand;
@@ -24,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
     private Switch aSwitch;
 
     boolean switchState;
+
+
+    public static ArrayList<Integer> array = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,33 +62,63 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //instantiate Random Class
-        Random random = new Random();
+
         randomBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                array.clear();
+                resultTV.setText("");
                 int start = Integer.parseInt(startET.getText().toString());
                 int end = Integer.parseInt(endET.getText().toString());
                 int count = Integer.parseInt(countET.getText().toString());
 
-                rand = random.generateRandomInt(start, end);
-                String randStr = String.valueOf(rand);
-                resultTV.append(randStr + " ");
-
-                if (switchState == true) {
-                    final Handler handler = new Handler(Looper.getMainLooper());
-                    for (int i = 0; i < count-1; i++) {
-                        handler.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                rand = random.generateRandomInt(start, end);
-                                String randStr = String.valueOf(rand);
-                                resultTV.append(randStr + " ");
-                            }
-                        }, 1000);
+                if(count> end - start && switchState == true)
+                {
+                    Toast.makeText(getApplicationContext(), "Invalid Input! Count is out of range", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    //pushing random integer to array list
+                    if (switchState == true) {
+                        for (int i = 0; i < count+1; i++) {
+                            recursive(array, start, end);
+                        }
                     }
+                    else
+                    {
+                        for (int i = 0; i < count+1; i++) {
+                            Random random = new Random();
+                            rand = random.generateRandomInt(start, end);
+                            array.add(rand);
+                        }
+                    }
+                }
+
+
+                //printing
+                for(int i =0; i<array.size()-1;i++){
+                    String randStr = String.valueOf(array.get(i));
+                    resultTV.append(randStr + " ");
                 }
             }
         });
+    }
 
+    public static boolean contains(final ArrayList<Integer> arr, final int key) {
+        return arr.contains(key);
+    }
+
+    public void recursive(final ArrayList<Integer> arr, int start, int end){
+        Random random = new Random();
+        rand = random.generateRandomInt(start, end);
+        boolean duplicate = contains(arr, rand);
+        if(duplicate == true)
+        {
+            recursive(arr, start, end);
+        }
+        else
+        {
+            array.add(rand);
+        }
     }
 }

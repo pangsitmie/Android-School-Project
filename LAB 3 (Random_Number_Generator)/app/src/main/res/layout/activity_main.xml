@@ -19,7 +19,7 @@
 
     <RelativeLayout
         android:id="@+id/rel1"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true">
 
@@ -40,7 +40,8 @@
             android:layout_marginLeft="30dp"
             android:layout_toRightOf="@+id/startTV"
             android:hint="Enter a number"
-            android:inputType="number" />
+            android:inputType="number"
+            android:padding="10dp" />
 
         <TextView
             android:id="@+id/endTV"
@@ -61,7 +62,8 @@
             android:layout_alignTop="@+id/endTV"
             android:layout_toRightOf="@+id/endTV"
             android:hint="Enter a number"
-            android:inputType="number" />
+            android:inputType="number"
+            android:padding="10dp" />
 
         <!--    count-->
         <TextView
@@ -85,16 +87,17 @@
             android:hint="Enter a number"
             android:inputType="number" />
 
-<!--        toggle-->
+        <!--        toggle-->
         <Switch
             android:id="@+id/swRepeat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/countTV"
             android:layout_marginTop="20dp"
-            android:text="repeat"
+            android:padding="10dp"
+            android:text="Repeat"
             android:textSize="15sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnRandom"
@@ -102,12 +105,22 @@
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/swRepeat"
             android:layout_alignLeft="@+id/endET"
+            android:layout_marginLeft="20dp"
             android:layout_toRightOf="@+id/swRepeat"
-            android:text="Random"
-            android:paddingRight="20dp"
+            android:inputType="number"
             android:paddingLeft="20dp"
-            android:textColor="#fff"
-            android:inputType="number" />
+            android:paddingRight="20dp"
+            android:text="Generate"
+            android:textColor="#fff" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/swRepeat"
+            android:paddingTop="10dp"
+            android:text="Repeat switch means there can be a duplicate random number that is generated" />
+
+
     </RelativeLayout>
 
     <RelativeLayout
