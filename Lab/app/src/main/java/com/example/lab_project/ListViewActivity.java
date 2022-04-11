@@ -24,7 +24,7 @@ public class ListViewActivity extends AppCompatActivity {
 
 
         ArrayList<Users> userList = new ArrayList<>();
-        for (int i=0;i<500;i++)
+        for (int i=1;i<=500;i++)
         {
             Users user = new Users("User "+i, "desc "+i);
             userList.add(user);
@@ -43,7 +43,7 @@ public class ListViewActivity extends AppCompatActivity {
                 AlertDialog.Builder builder = new AlertDialog.Builder(ListViewActivity.this);
                 builder.setTitle("Result");
                 builder.setIcon(R.drawable.ic_privacy);
-                builder.setMessage("");
+                builder.setMessage(listItem.getTitle());
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
