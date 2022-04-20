@@ -43,7 +43,7 @@ public class ListViewActivity extends AppCompatActivity {
                 AlertDialog.Builder builder = new AlertDialog.Builder(ListViewActivity.this);
                 builder.setTitle("Result");
                 builder.setIcon(R.drawable.ic_privacy);
-                builder.setMessage(listItem.getTitle());
+                builder.setMessage(listItem.getTitle()+" selected");
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
