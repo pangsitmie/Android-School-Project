@@ -59,6 +59,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 intent = new Intent(this, RadioButtonActivity.class);
                 Toast.makeText(getApplicationContext(), ":Lab 6", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.nav_Notification:
+                intent = new Intent(this, NotificationActivity.class);
+                Toast.makeText(getApplicationContext(), ":Lab 7", Toast.LENGTH_SHORT).show();
+                break;
 
         }
         startActivity(intent);

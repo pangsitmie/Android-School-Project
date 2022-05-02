@@ -1,18 +1,22 @@
 package com.example.lab_project;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -49,6 +53,23 @@ public class TabHostActivity extends AppCompatActivity {
         ListAdapter adapter = new ListAdapter(this, R.layout.listview_layout, userList);
         lv.setAdapter(adapter);
 
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(), String.valueOf(position)+" Selected", Toast.LENGTH_SHORT).show();
+//                Users listItem = (Users) lv.getItemAtPosition(position);
+//                AlertDialog.Builder builder = new AlertDialog.Builder(TabHostActivity.this);
+//                builder.setTitle("Result");
+//                builder.setIcon(R.drawable.ic_privacy);
+//                builder.setMessage(listItem.getTitle()+" selected");
+//                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                    }
+//                });
+//                builder.show();
+            }
+        });
 
 //        CALENDER
         final Calendar mCalendar = Calendar.getInstance();

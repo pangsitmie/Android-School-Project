@@ -13,6 +13,10 @@
             android:id="@+id/nav_radioButton"
             android:title="Radio Button (Lab6)"
             android:icon="@drawable/ic_radio_button"/>
+        <item
+            android:id="@+id/nav_Notification"
+            android:title="Notification (Lab7)"
+            android:icon="@drawable/ic_notification"/>
     </group>
 
 </menu>
