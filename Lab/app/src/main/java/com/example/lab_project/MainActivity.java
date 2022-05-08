@@ -49,19 +49,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId()) {
             case R.id.nav_listView:
                 intent = new Intent(this, ListViewActivity.class);
-                Toast.makeText(getApplicationContext(), ":Lab 4", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Lab 4", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_tabHost:
                 intent = new Intent(this, TabHostActivity.class);
-                Toast.makeText(getApplicationContext(), ":Lab 5", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Lab 5", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_radioButton:
                 intent = new Intent(this, RadioButtonActivity.class);
-                Toast.makeText(getApplicationContext(), ":Lab 6", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Lab 6", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_Notification:
                 intent = new Intent(this, NotificationActivity.class);
-                Toast.makeText(getApplicationContext(), ":Lab 7", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Lab 7", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_Sensors:
+                intent = new Intent(this, SensorsActivity.class);
+                Toast.makeText(getApplicationContext(), "Lab 8", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_move_image:
+                intent = new Intent(this, MoveImageActivity.class);
+                Toast.makeText(getApplicationContext(), "Lab 8 Bonus", Toast.LENGTH_SHORT).show();
                 break;
 
         }
