@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lab_Project">
         <activity
+            android:name=".page1"
+            android:exported="false" />
+        <activity
             android:name=".MoveImageActivity"
             android:exported="false" />
         <activity
