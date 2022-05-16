@@ -58,7 +58,7 @@ public class RadioButtonActivity extends AppCompatActivity {
         listViewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ListViewActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ListViewActivity2.class);
                 startActivity(intent);
             }
         });

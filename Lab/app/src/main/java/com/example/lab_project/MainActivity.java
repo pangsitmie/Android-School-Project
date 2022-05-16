@@ -63,6 +63,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 intent = new Intent(this, NotificationActivity.class);
                 Toast.makeText(getApplicationContext(), "Lab 7", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.nav_Fragment:
+                intent = new Intent(this, FragmentActivity.class);
+                Toast.makeText(getApplicationContext(), "Lab 7", Toast.LENGTH_SHORT).show();
+                break;
             case R.id.nav_Sensors:
                 intent = new Intent(this, SensorsActivity.class);
                 Toast.makeText(getApplicationContext(), "Lab 8", Toast.LENGTH_SHORT).show();

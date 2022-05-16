@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lab_Project">
         <activity
-            android:name=".page1"
+            android:name=".FragmentResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FragmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RadioButtonActivity3"
             android:exported="false" />
         <activity
             android:name=".MoveImageActivity"
@@ -32,6 +38,9 @@
             android:exported="false" />
         <activity
             android:name=".ListViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListViewActivity2"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
