@@ -23,8 +23,8 @@ public class NotificationActivity extends AppCompatActivity {
     NotificationManager notificationManager;
     NotificationChannel channel;
 
-    public static final String NOTIFICATION_CHANNEL_ID = "10001" ;
-    private final static String default_notification_channel_id = "default" ;
+    public static final String NOTIFICATION_CHANNEL_ID = "10001";
+    private final static String default_notification_channel_id = "default";
 
     public static final String CHANNEL_1_ID = "channel1";
     public static final String CHANNEL_2_ID = "channel2";
@@ -50,34 +50,34 @@ public class NotificationActivity extends AppCompatActivity {
                 Toast.makeText(NotificationActivity.this, "send clicked", Toast.LENGTH_SHORT).show();
 
 //                Notification Compat builder
-                    NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(NotificationActivity.this,
-                            default_notification_channel_id )
-                            .setSmallIcon(R.drawable. ic_notification)
-                            .setColor(Color.BLUE)
-                            .setContentTitle( "Test Notification" )
-                            .setContentText( "Hello! This is my first push notification" );
+                NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(NotificationActivity.this,
+                        default_notification_channel_id)
+                        .setSmallIcon(R.drawable.ic_notification)
+                        .setColor(Color.BLUE)
+                        .setContentTitle("Test Notification")
+                        .setContentText("Hello! This is my first push notification");
 //                Notification manager
-                    NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context. NOTIFICATION_SERVICE ) ;
-                    if (android.os.Build.VERSION. SDK_INT >= android.os.Build.VERSION_CODES. O ) {
-                        AudioAttributes audioAttributes = new AudioAttributes.Builder()
-                                .setContentType(AudioAttributes. CONTENT_TYPE_SONIFICATION )
-                                .setUsage(AudioAttributes. USAGE_ALARM )
-                                .build() ;
-                        int importance = NotificationManager. IMPORTANCE_HIGH ;
+                NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                    AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                            .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                            .setUsage(AudioAttributes.USAGE_ALARM)
+                            .build();
+                    int importance = NotificationManager.IMPORTANCE_HIGH;
 //                    Notification Channel
-                        NotificationChannel notificationChannel = new
-                                NotificationChannel( NOTIFICATION_CHANNEL_ID , "NOTIFICATION_CHANNEL_NAME" , importance) ;
-                        notificationChannel.enableLights( true ) ;
-                        notificationChannel.setLightColor(Color. RED ) ;
-                        notificationChannel.enableVibration( true ) ;
-                        notificationChannel.setVibrationPattern( new long []{ 100 , 200 , 300 , 400 , 500 , 400 , 300 , 200 , 400 }) ;
-                        //notificationChannel.setSound(sound , audioAttributes) ;
-                        mBuilder.setChannelId( NOTIFICATION_CHANNEL_ID ) ;
-                        assert mNotificationManager != null;
-                        mNotificationManager.createNotificationChannel(notificationChannel) ;
+                    NotificationChannel notificationChannel = new
+                            NotificationChannel(NOTIFICATION_CHANNEL_ID, "NOTIFICATION_CHANNEL_NAME", importance);
+                    notificationChannel.enableLights(true);
+                    notificationChannel.setLightColor(Color.RED);
+                    notificationChannel.enableVibration(true);
+                    notificationChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
+                    //notificationChannel.setSound(sound , audioAttributes) ;
+                    mBuilder.setChannelId(NOTIFICATION_CHANNEL_ID);
+                    assert mNotificationManager != null;
+                    mNotificationManager.createNotificationChannel(notificationChannel);
 
-                        assert mNotificationManager != null;
-                        mNotificationManager.notify(( int ) System. currentTimeMillis (), mBuilder.build()) ;
+                    assert mNotificationManager != null;
+                    mNotificationManager.notify((int) System.currentTimeMillis(), mBuilder.build());
                 }
             }
         });
@@ -128,7 +128,8 @@ public class NotificationActivity extends AppCompatActivity {
             }
         });
     }
-    public void sendOnChannel1(){
+
+    public void sendOnChannel1() {
         NotificationCompat.Builder notification = new NotificationCompat.Builder(this, "channel_id")
                 .setContentTitle("Test Title")
                 .setContentText("Test Message")
@@ -136,6 +137,7 @@ public class NotificationActivity extends AppCompatActivity {
 
         //notificationManager.notify(1, notification.build());
     }
+
     private void createNotificationChannel() {
         // Create the NotificationChannel, but only on API 26+ because
         // the NotificationChannel class is new and not in the support library
